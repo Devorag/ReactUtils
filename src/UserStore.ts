@@ -13,14 +13,14 @@ interface User {
 }
 
 async function loginUser(apiUrl: string, username: string, password: string): Promise<User> {
-    apiUrl = apiUrl + "user/";
+    apiUrl = apiUrl + "Users2/";
     const postData = CreateAPI(apiUrl, "").postData;
     const user = await postData<User>("login", { username, password });
     return user;
 }
 
 async function logoutUser(apiUrl: string, username: string): Promise<User> {
-    apiUrl = apiUrl + "user/";
+    apiUrl = apiUrl + "Users2/";
     const postData = CreateAPI(apiUrl, "").postData;
     const user = await postData<User>("logout", { username });
     return user;

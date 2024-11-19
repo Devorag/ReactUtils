@@ -32,7 +32,7 @@ export default function Login() {
     return (
         <>
             <div>Logged In = {isLoggedIn.toString()}</div>
-            <h2 className="text-danger">{crashmsg} || {errormsg}</h2>
+            <h2 className="text-danger">{crashmsg || errormsg}</h2>
             <form onSubmit={handleSubmit(onSubmit)}>
                 <label>Username</label>
                 <input type="text" {...register('username', { required: 'Username is required' })} />
