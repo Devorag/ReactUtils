@@ -6,7 +6,7 @@ type forminput = { username: string, password: string }
 
 export default function Login() {
     const { register, handleSubmit, formState: { errors } } = useForm<forminput>();
-    const apiiurl = "http://localhost:5016/api/";
+    const apiiurl = "https://dgrecipeapi.azurewebsites.net/api/";
     const useUserStore = getUserStore(apiiurl);
     const login = useUserStore((state) => state.login);
     const logout = useUserStore((state) => state.logout);
