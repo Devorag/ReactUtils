@@ -36,15 +36,14 @@ export function getUserStore(apiUrl: string) {
                 const storedvalue = sessionStorage.getItem(keyname);
                 const initialvals = storedvalue ?
                     JSON.parse(storedvalue)
-                    : { userName: "", roleName: "", roleRank: "", sessionKey: "", errorMessage: "", isLoggedIn: false, }
+                    : { userName: "", roleName: "", roleRank: 0, sessionKey: "", errorMessage: "", isLoggedIn: false, }
                 return {
                     ...initialvals,
                     logout: async (username: string) => {
                         const user = await logoutUser(apiUrl, username);
                         const newstate = { userName: user.userName, roleName: user.roleName, roleRank: user.roleRank, sessionKey: user.sessionKey, errorMessage: user.errorMessage, isLoggedIn: false };
                         sessionStorage.setItem(keyname, JSON.stringify(newstate));
-                        sessionStorage.setItem(keyname, JSON.stringify(newstate))
-                        set(newstate)
+                        set(newstate);
                     },
                     login: async (username: string, password: string) => {
                         const user = await loginUser(apiUrl, username, password);
