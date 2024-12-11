@@ -8,6 +8,7 @@ const hasErrorMessage = <T>(data: T): data is T & { errorMessage?: string } => {
 export function CreateAPI(baseurl: string, sessionkey: string) {
 
     async function request<T>(url: string, options: RequestInit): Promise<T> {
+        console.log("request baseurl", baseurl);
         url = baseurl + url;
         const r = await fetch(url, {
             ...options,

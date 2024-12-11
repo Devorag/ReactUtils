@@ -10,9 +10,10 @@ interface User {
     isLoggedIn: boolean,
     login: (username: string, password: string) => Promise<void>,
     logout: (username: string) => void
-}
+}4
 
 async function loginUser(apiUrl: string, username: string, password: string): Promise<User> {
+    console.log("api url", apiUrl);
     apiUrl = apiUrl + "Users2/";
     const postData = CreateAPI(apiUrl, "").postData;
     const user = await postData<User>("login", { username, password });
