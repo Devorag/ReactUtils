@@ -24,7 +24,7 @@ export default function Login() {
                 setCrashmsg(error.message);
             }
             else {
-                setCrashmsg("error");
+                setCrashmsg("Invalid Login Try Again");
             }
         }
     };
