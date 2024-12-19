@@ -24,7 +24,7 @@ export default function Login() {
                 setCrashmsg(error.message);
             }
             else {
-                setCrashmsg("Invalid Login Try Again");
+                setCrashmsg("Invalid username or password");
             }
         }
     };
